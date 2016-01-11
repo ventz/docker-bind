@@ -1,14 +1,14 @@
 FROM alpine:latest
+EXPOSE 53
+
 RUN apk --update add bind
 
-RUN mkdir -m 0755 -p /var/run/named && chown root:named /var/run/named
+RUN mkdir -m 0755 -p /var/run/named && chown -R root:named /var/run/named
 
 # /var/cache/bind needs to be owned by "bind"
 # since we are mounting, do it manually
 # NOTE: Per Dockerfile manual --> need to mkdir the mounted dir to chown
-RUN mkdir /var/cache/bind
-RUN chown named:named /var/cache/bind
-RUN chmod -R 0775 /var/cache/bind
+RUN mkdir -m 0755 -p /var/cache/bind && touch /var/cache/bind/docker-init && chown -R named:named /var/cache/bind
 
 # Mounts
 # NOTE: Per Dockerfile manual -->
@@ -17,6 +17,5 @@ RUN chmod -R 0775 /var/cache/bind
 VOLUME ["/etc/bind"]
 VOLUME ["/var/cache/bind"]
 
-EXPOSE 53
-
-CMD ["/usr/sbin/named", "-c", "/etc/bind/named.conf", "-g", "-u", "named"]
+COPY entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
