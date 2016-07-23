@@ -8,8 +8,6 @@ ENV TCPLOGHOST=
 
 RUN apk --update add bind
 RUN apk --update add rsyslog
-# to be removed
-RUN apk --update add bash
 
 RUN mkdir -m 0755 -p /var/spool/rsyslog &&  addgroup syslog && adduser -D -s /sbin/nologin -h /var/spool/rsyslog -G syslog syslog && chown -R syslog:syslog /var/spool/rsyslog 
 RUN mkdir -m 0755 -p /var/run/named && chown -R root:named /var/run/named
