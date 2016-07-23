@@ -28,4 +28,8 @@ VOLUME ["/var/cache/bind"]
 
 COPY entrypoint.sh /
 COPY rsyslog.conf /etc/rsyslog.conf
+
+EXPOSE 53
+EXPOSE 53/udp
+
 ENTRYPOINT ["/entrypoint.sh"]
