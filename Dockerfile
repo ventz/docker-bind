@@ -1,5 +1,6 @@
 FROM alpine:latest
 EXPOSE 53
+EXPOSE 53/udp
 
 RUN apk --update add bind
 
