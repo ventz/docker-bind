@@ -1,4 +1,5 @@
 ### ISC BIND9 Container (Stable: 9.10.4_xx) built on top of Alpine
+### Last update: 6-20-17
 
 This container is a super small (~5MB compressed pull, and only ~9MB
 when extracted) FULL version of ISC BIND9.
