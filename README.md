@@ -1,5 +1,7 @@
-### ISC BIND9 Container (Stable: 9.10.4_xx) built on top of Alpine
-### Last update: 6-20-17
+### ISC BIND9 Container (Stable: 9.11.1_xx) built on top of Alpine
+### Last update: 9-18-17
+
+NOTE: "Last Update" is the date of the latest DockerHub build.
 
 This container is a super small (~5MB compressed pull, and only ~9MB
 when extracted) FULL version of ISC BIND9.
