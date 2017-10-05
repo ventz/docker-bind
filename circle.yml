@@ -17,7 +17,7 @@ dependencies:
 
 test:
   override:
-    - docker run ${DOCKER_IMAGE} --entrypoint=bind -V
+    - docker run --entrypoint=/usr/sbin/named ${DOCKER_IMAGE} -V
 
 deployment:
   hub:
