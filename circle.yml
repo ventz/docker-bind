@@ -1,0 +1,28 @@
+machine:
+  environment:
+    MAJOR_VERSION_TAG: 1
+    DOCKER_IMAGE: 'unifio/bind'
+  services:
+    - docker
+
+dependencies:
+  cache_directories:
+    - "~/docker"
+  override:
+    - docker info
+    - if [[ -e ~/docker/image.tar ]]; then docker load --input ~/docker/image.tar; fi
+    - docker build --rm=false -t ${DOCKER_IMAGE} container
+    - mkdir -p ~/docker
+    - docker save ${DOCKER_IMAGE} > ~/docker/image.tar
+
+test:
+  override:
+    - docker run --entrypoint=/usr/sbin/named ${DOCKER_IMAGE} -V
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker tag -f `docker images | grep -E "${DOCKER_IMAGE}" | awk '{print $3}'` ${DOCKER_IMAGE}:${MAJOR_VERSION_TAG}.0.${CIRCLE_BUILD_NUM}
+      - docker push ${DOCKER_IMAGE}
