@@ -1,3 +1,5 @@
+## Forked from [ventz/docker-bind](https://github.com/ventz/docker-bind)
+
 ### ISC BIND9 Container (Stable: 9.11.1_xx) built on top of Alpine
 ### Last update: 9-18-17
 
@@ -25,7 +27,7 @@ Specifically, you need to have these directories/paths:
 In your "/DATA/etc/bind" directory, a file "named.conf", which acts as an entry point to your configs
 
 2.) [ *REQUIRED* ]
-A "/DATA/var/cache/bind" directory for all of the master or slave zones. If it's for slave zones, it will populate automatically and you can leave it blank.
+A "/DATA/var/named" directory for all of the master or slave zones. If it's for slave zones, it will populate automatically and you can leave it blank.
 
 3.) [ *OPTIONAL* ]
 A "/DATA/var/log/named" directory for logging your DNS requests/returns/other breakdown. By default, logging is done to the console
@@ -40,7 +42,7 @@ docker run --name=dns-master01
 --dns=8.8.8.8 --dns=8.8.4.4 \
 -p 53:53/udp -p 53:53 \
 -v /DATA/etc/bind:/etc/bind \
--v /DATA/var/cache/bind:/var/cache/bind \
+-v /DATA/var/cache/bind:/var/named \
 -v /DATA/var/log/named:/var/log/named \
-ventz/bind
+unifio/bind
 ```
