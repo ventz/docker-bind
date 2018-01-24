@@ -1,7 +1,7 @@
 FROM alpine:latest
 EXPOSE 53 53/udp
 
-RUN apk --update add bind
+RUN apk --update upgrade && apk add bind
 
 RUN mkdir -m 0755 -p /var/run/named && chown -R root:named /var/run/named
 
