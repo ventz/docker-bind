@@ -1,5 +1,5 @@
-### ISC BIND9 Container (Stable: 9.11.1_xx) built on top of Alpine
-### Last update: 9-18-17
+### ISC BIND9 Container (Stable: 9.11.2_xx) built on top of Alpine
+### Last update: 2-6-18
 
 NOTE: "Last Update" is the date of the latest DockerHub build.
 
