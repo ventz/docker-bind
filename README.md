@@ -40,10 +40,10 @@ A "/DATA/var/bind" directory for all of the master or slave zones. If it's for s
 
 # How to run a BIND ("named") Docker Container?
 
-```
 # Default Example
 # This is just to test it out - by default only allows queries from
 # itself (127.0.0.1) -- pretty useless for real world usage
+```
 docker run --name=dns-test
 -it -d \
 --dns=8.8.8.8 --dns=8.8.4.4 \
@@ -51,10 +51,10 @@ docker run --name=dns-test
 ventz/bind
 ```
 
-```
 # Customer Override Example for Authoritative Master
 # Edit: named.conf.local with your forward zone at least
 # and create the file in /var/named/$yourdomain.tld
+```
 docker run --name=dns-master
 -it -d \
 --dns=8.8.8.8 --dns=8.8.4.4 \
@@ -64,9 +64,9 @@ docker run --name=dns-master
 ventz/bind
 ```
 
-```
 # Custom Override Example for Recursive Resolver/Cacher:
 # Edit: named.conf.options -> change the "allow-recursion" and  "allow-query" with your subnets
+```
 docker run --name=dns-resolver
 -it -d \
 --dns=8.8.8.8 --dns=8.8.4.4 \
