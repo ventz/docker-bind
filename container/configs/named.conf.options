@@ -2,7 +2,7 @@ options {
     directory "/var/cache/bind";
 
     lock-file none;
-    pid-file "/var/run/named.pid";
+    pid-file "/var/run/named/named.pid";
     random-device "/dev/urandom";
     automatic-interface-scan no;
 
