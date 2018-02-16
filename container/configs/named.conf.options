@@ -1,5 +1,6 @@
 options {
     directory "/var/cache/bind";
+    managed-keys-directory "/var/bind/dyn";
 
     lock-file none;
     pid-file "/var/run/named/named.pid";
