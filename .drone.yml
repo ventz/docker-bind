@@ -13,7 +13,7 @@ pipeline:
     dockerfile: 'container/Dockerfile'
     secrets: ["docker_username", "docker_password"]
     repo: '${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}'
-    tag: 'edge'
+    tag: 'edge-droneci'
     when:
       branch: 'edge'
   configs:
@@ -22,6 +22,6 @@ pipeline:
     dockerfile: 'container/Dockerfile'
     secrets: ["docker_username", "docker_password"]
     repo: '${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}'
-    tag: 'configs'
+    tag: 'configs-droneci'
     when:
       branch: 'config-changes'
