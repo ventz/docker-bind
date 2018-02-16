@@ -1,0 +1,30 @@
+// Configure the IPs to listen on here.
+listen-on    { 127.0.0.1; };
+listen-on-v6 { none; };
+
+// RECURSION - Required for caching servers
+// Default: yes
+// Values : yes, no
+//
+// yes: Attempt to resolve requests we are not authoritative for
+// no : Do not resolve requests we are not authoritative for
+//
+// NOTE: Commented out because specified in each zone/view
+//recursion yes;
+recursion no;
+
+// ALLOW-RECURSION - Who may use our caching server?
+// Default: any;
+// Values : any, none, (addresslist)
+//
+// any    : anybody may use the caching server
+// none   : noone may use the caching server
+// address: List of IP addresses that may use the caching server.
+// allow-recursion { localhost; localnets; };
+//
+// NOTE: Commented out because specified in each zone/view
+// allow-recursion { clients; servers; lan; };
+//allow-recursion { recursors; };
+allow-recursion { none; };
+
+allow-query-cache { none; };

@@ -10,7 +10,7 @@ include "/etc/bind/named.conf.default-zones";
 
 // Consider adding the 1918 zones here, if they are not used in your
 // organization
-include "/etc/bind/named.conf.rfc1918";
+//include "/etc/bind/named.conf.rfc1918";
 
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -22,7 +22,7 @@ include "/etc/bind/named.conf.rfc1918";
 # example reverse zone: 1.2.3.4/24
 //zone "4.3.2.1.in-addr.arpa" {
 //    type master;
-//    file "/var/bind/1.2.3.4.rev";
+//    file "/etc/bind/zones/rev.1.2.3.4";
 //    notify yes;
 //};
 
@@ -33,7 +33,7 @@ include "/etc/bind/named.conf.rfc1918";
 # example "forward" (domain) zone: domain.tld
 //zone "domain.tld" {
 //    type master;
-//    file "/var/bind/domain.tld";
+//    file "/etc/bind/zones/db.domain.tld";
 //    notify yes;
 //    #also-notify { a.b.c.d; };
 //    #allow-transfer { localhost; a.b.c.d; };
