@@ -1,0 +1,27 @@
+labels:
+  cpus: '1'
+  ram: '512'
+  mhz: '2000'
+clone:
+  git:
+    image: 'plugins/git'
+    tags: true
+pipeline:
+  edge:
+    image: 'plugins/docker'
+    context: 'container'
+    dockerfile: 'container/Dockerfile'
+    secrets: ["docker_username", "docker_password"]
+    repo: '${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}'
+    tag: 'edge'
+    when:
+      branch: 'edge'
+  configs:
+    image: 'plugins/docker'
+    context: 'container'
+    dockerfile: 'container/Dockerfile'
+    secrets: ["docker_username", "docker_password"]
+    repo: '${DRONE_REPO_OWNER}/${DRONE_REPO_NAME##docker-}'
+    tag: 'configs'
+    when:
+      branch: 'config-changes'
