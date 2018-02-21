@@ -1,0 +1,58 @@
+// Configure the IPs to listen on here.
+//listen-on    { any; };
+listen-on-v6 { none; };
+
+// QUERY SOURCE - Useful for caching servers behind a firewall
+// Default: address * port *
+// Values : The IP address and port to use as the source of queries to other servers
+// If you have problems and are behind a firewall, uncomment:
+//query-source address * port *;
+
+// If there is a firewall between you and nameservers you want
+// to talk to, you may need to fix the firewall to allow multiple
+// ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+// RECURSION - Required for caching servers
+// Default: yes
+// Values : yes, no
+//
+// yes: Attempt to resolve requests we are not authoritative for
+// no : Do not resolve requests we are not authoritative for
+//
+// NOTE: Commented out because specified in each zone/view
+//recursion yes;
+//recursion no;
+
+// ALLOW-RECURSION - Who may use our caching server?
+// Default: any;
+// Values : any, none, (addresslist)
+//
+// any    : anybody may use the caching server
+// none   : noone may use the caching server
+// address: List of IP addresses that may use the caching server.
+// allow-recursion { localhost; localnets; };
+//
+// NOTE: Commented out because specified in each zone/view
+// allow-recursion { clients; servers; lan; };
+allow-recursion { recursors; };
+//allow-recursion { none; };
+
+// FORWARD - Recommended for caching servers
+// Default: first
+// Values : first, only
+//
+// first: Query "forwarders" first, then resolve request ourself
+// only : Only query the "forwarders" to resolve requests
+//
+//forward first;
+
+// If your ISP provided one or more IP addresses for stable
+// nameservers, you probably want to use them as forwarders.
+// Uncomment the following block, and insert the addresses replacing
+// the all-0's placeholder.
+
+forwarders {
+    9.9.9.9;
+    8.8.8.8;
+    8.8.4.4;
+};

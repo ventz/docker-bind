@@ -1,2 +1,5 @@
 You should add your zones to: named.conf.local
-Generally, that's the only file you will need to modify
+If you want to change server options edit: named.conf.options.local
+To add ACLs for use in either of the above files edit: named.conf.acls
+
+Generally, these are the only files you will need to modify

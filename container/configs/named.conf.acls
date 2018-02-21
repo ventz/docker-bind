@@ -1,0 +1,10 @@
+// Default ACLs defined by bind
+//
+// any - Matches all hosts.
+// none - Matches no hosts.
+// localhost - Matches the IPv4 and IPv6 addresses of all network interfaces on the system.
+// localnets - Matches any host on an IPv4 or IPv6 network for which the system has an interface.
+
+acl "recursors" {
+    127.0.0.1;
+};

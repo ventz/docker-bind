@@ -1,20 +1,20 @@
-zone "10.in-addr.arpa"      { type master; file "/etc/bind/default-zones/db.empty"; };
+zone "10.in-addr.arpa"      { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
  
-zone "16.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "17.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "18.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "19.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "20.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "21.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "22.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "23.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "24.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "25.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "26.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "27.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "28.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "29.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "30.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
-zone "31.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; };
+zone "16.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "17.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "18.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "19.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "20.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "21.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "22.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "23.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "24.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "25.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "26.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "27.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "28.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "29.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "30.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
+zone "31.172.in-addr.arpa"  { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
 
-zone "168.192.in-addr.arpa" { type master; file "/etc/bind/default-zones/db.empty"; };
+zone "168.192.in-addr.arpa" { type master; file "/etc/bind/default-zones/db.empty"; notify no; allow-update { none; }; };
