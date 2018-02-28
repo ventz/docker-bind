@@ -13,7 +13,7 @@ RUN apk --update upgrade && apk add bind
 # &
 # Get latest bind.keys
 RUN mkdir -m 0770 -p /etc/bind && chown -R root:named /etc/bind ; \
-    mkdir -m 0770 -p /var/bind && chown -R root:named /var/cache ; \
+    mkdir -m 0770 -p /var/cache/bind && chown -R root:named /var/cache/bind ; \
     wget -q -O /etc/bind/bind.keys https://ftp.isc.org/isc/bind9/keys/9.11/bind.keys.v9_11 ; \
     rndc-confgen -a -r /dev/urandom
 
@@ -24,7 +24,7 @@ COPY configs/. /etc/bind/
 #	"if any build steps change the data within the volume
 # 	 after it has been declared, those changes will be discarded."
 VOLUME ["/etc/bind"]
-VOLUME ["/var/bind"]
+VOLUME ["/var/cache/bind"]
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]

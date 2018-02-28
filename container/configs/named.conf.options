@@ -1,5 +1,5 @@
 options {
-    directory "/var/bind";
+    directory "/var/cache/bind";
     
     // Remove (hide) our bind version - no reason to disclose it
     version "";
