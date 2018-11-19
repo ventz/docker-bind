@@ -1,5 +1,5 @@
 ### ISC BIND9 Container (Stable: 9.12.2_xx) built on top of Alpine
-### Last update: 10-9-18 (major new update!)
+### Last update: 11-19-18
 ### Latest Stable Docker Tag: 9.12.2_p1
 
 NOTE: "Last Update" is the date of the latest DockerHub build.
@@ -76,3 +76,6 @@ docker run --name=dns-resolver
 -v /DATA/var/cache/bind:/var/cache/bind \
 ventz/bind
 ```
+
+Additional options may be passed to the bind daemon via the `OPTIONS` argument, provided as:
+`docker run --env OPTIONS='...'
