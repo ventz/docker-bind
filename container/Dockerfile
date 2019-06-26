@@ -1,7 +1,7 @@
 FROM alpine:latest
 EXPOSE 53 53/udp
 
-RUN apk --update upgrade && apk add bind bind-tools
+RUN apk --update upgrade && apk add bind bind-tools bind-plugins
 
 # /etc/bind needs to be owned by root, group owned by "bind", and chmod 750
 # since we are mounting, do it manually
