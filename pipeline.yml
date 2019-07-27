@@ -1,0 +1,4 @@
+---
+imageName: bind_dns:v9.14.3_test
+deployStaging: false
+# stagingHost:
