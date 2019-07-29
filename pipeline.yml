@@ -1,0 +1,4 @@
+---
+imageName: bind_dns
+deployStaging: false
+# stagingHost:
