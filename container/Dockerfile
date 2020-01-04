@@ -1,4 +1,4 @@
-FROM tcely/alpine-aports
+FROM tcely/alpine-stable
 
 EXPOSE 53 53/udp
 COPY entrypoint.sh /
