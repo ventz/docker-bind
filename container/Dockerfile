@@ -6,7 +6,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 RUN apk --update upgrade && \
     apk add bind ca-certificates curl gnupg1 && \
-    rm -rf /var/cache/apk/* && \
+    rm -rf /etc/bind/rndc.key /var/cache/apk/* && \
     chmod g-w /var/bind && \
     cp -p /etc/bind/bind.keys /var/bind/ && \
     install -d -m 0770 -o named -g named /var/cache/bind && \
