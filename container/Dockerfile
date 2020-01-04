@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM tcely/alpine-aports
 
 EXPOSE 53 53/udp
 COPY entrypoint.sh /
