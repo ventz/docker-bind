@@ -154,6 +154,20 @@ logging {
     category default  { stdout; };
 };
 
+For more information, see: https://www.slideshare.net/MenandMice/bind-9-logging-best-practices
+
+## How do I just change Bind STDERR to STDOUT logging?
+
+There is now a "BIND_LOG" ENV (environment) variable for logging
+
+Environment variables can both have a default and be customized at run time. 
+
+```
+"-g" = (default) Run the server in the foreground and force all logging stderr.
+"-f" = Run the server in the foreground
 ```
 
-For more information, see: https://www.slideshare.net/MenandMice/bind-9-logging-best-practices
+By default, the "-g" value is set, as that logs all to STDERR.
+You can now override it with "-f" by passing `-e "BIND_LOG=-f"` to `docker run`
+
+

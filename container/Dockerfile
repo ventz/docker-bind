@@ -3,6 +3,11 @@ EXPOSE 53 53/udp
 
 RUN apk --update upgrade && apk add bind bind-tools bind-plugins
 
+# BIND Log Options - you can override at run time
+# "-g" = (default) Run the server in the foreground and force all logging stderr.
+# "-f" = Run the server in the foreground
+env BIND_LOG -g
+
 # /etc/bind needs to be owned by root, group owned by "bind", and chmod 750
 # since we are mounting, do it manually
 # NOTE: Per Dockerfile manual --> need to mkdir the mounted dir to chown
