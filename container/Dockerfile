@@ -5,7 +5,7 @@ COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
 
 RUN apk --update upgrade && \
-    apk add bind ca-certificates curl gnupg1 && \
+    apk add bind ca-certificates curl gnupg && \
     rm -rf /etc/bind/rndc.key /var/cache/apk/* && \
     chmod g-w /var/bind && \
     cp -p /etc/bind/bind.keys /var/bind/ && \
